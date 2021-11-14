@@ -3,31 +3,31 @@ package com.contour.model.entity;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.util.Objects;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@AllArgsConstructor
 @Entity
-public class VMessUser {
+public class Header {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String uuid;
-    private Integer alterId;
 
-    @OneToOne
-    private User user;
+    private String key;
+    private String value;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        VMessUser vMessUser = (VMessUser) o;
-        return id != null && Objects.equals(id, vMessUser.id);
+        Header header = (Header) o;
+        return id != null && Objects.equals(id, header.id);
     }
 
     @Override

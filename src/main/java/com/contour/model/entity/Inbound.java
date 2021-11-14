@@ -19,6 +19,19 @@ public class Inbound {
     private Long id;
     private String tag;
 
+    private int level;
+    private int alterId;
+    private boolean secureEncryptionOnly;
+
+    private boolean AcceptProxyProtocol;
+    private String path;
+    @OneToMany
+    @ToString.Exclude
+    private List<Header> headers;
+    private int maxEarlyData;
+    private boolean useBrowserForwarding;
+    private String earlyDataHeaderName;
+
     @ManyToOne
     private Server server;
     @ManyToMany

@@ -22,14 +22,8 @@ public class User {
     private Integer downTraffic;
     private Integer traffic;
 
-    @OneToOne
-    private VMessUser vmessUser;
-    @OneToOne
-    private ShadowsocksUser shadowsocksUser;
-    @OneToOne
-    private TrojanUser trojanUser;
-    @OneToOne
-    private VLESSUser vlessUser;
+    private String uuid;
+    private Integer alterId;
 
     @ManyToMany
     @ToString.Exclude
